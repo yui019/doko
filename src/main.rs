@@ -19,7 +19,7 @@ fn get_filtered_files(query: &str) -> Vec<&'static String> {
     unsafe {
         let filtered_files: Vec<&String> = ALL_FILES
             .par_iter()
-            .filter(|&file| levenshtein(&file, &query) < 10)
+            .filter(|&file| levenshtein(&file, &query) < 5)
             .collect();
 
         return filtered_files;
